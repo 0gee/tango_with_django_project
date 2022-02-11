@@ -4,7 +4,6 @@ from rango.models import Page, Category
 # We could add these forms to views.py, but it makes sense to split them off into their own file.
 
 class CategoryForm(forms.ModelForm):
-    NAME_MAX_LENGTH = 128
     name = forms.CharField(max_length=Category.NAME_MAX_LENGTH, help_text="Please enter the category name.")
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
     likes = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
